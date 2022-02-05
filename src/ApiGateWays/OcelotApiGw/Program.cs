@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Common.Logging;
+using Serilog;
 
 namespace OcelotApiGw
 {
@@ -23,13 +25,15 @@ namespace OcelotApiGw
                 config.AddJsonFile($"ocelot.{hostingcontext.HostingEnvironment.EnvironmentName}.json", true, true);
             })
              .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                }).ConfigureLogging((hostingcontext, loggingbuilder) =>
-                {
-                    loggingbuilder.AddConfiguration(hostingcontext.Configuration.GetSection("Logging"));
-                    loggingbuilder.AddConsole();
-                    loggingbuilder.AddDebug();
-                });
+             {
+                 webBuilder.UseStartup<Startup>();
+             })
+             .UseSerilog(SeriLogger.Configure);
+            //.ConfigureLogging((hostingcontext, loggingbuilder) =>
+            //    {
+            //        loggingbuilder.AddConfiguration(hostingcontext.Configuration.GetSection("Logging"));
+            //        loggingbuilder.AddConsole();
+            //        loggingbuilder.AddDebug();
+            //    });
     }
 }
