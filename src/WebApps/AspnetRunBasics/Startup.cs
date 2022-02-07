@@ -10,6 +10,9 @@ using Polly;
 using System.Net.Http;
 using Polly.Extensions.Http;
 using Serilog;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using HealthChecks.UI.Client;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace AspnetRunBasics
 {
@@ -59,6 +62,10 @@ namespace AspnetRunBasics
             #endregion
 
             services.AddRazorPages();
+            services.AddHealthChecks()
+                    .AddUrlGroup(
+                     new Uri(Configuration["ApiSettings:GatewayAddress"]),
+                     "Ocelot API Gw", HealthStatus.Degraded);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -85,6 +92,11 @@ namespace AspnetRunBasics
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
+                {
+                    Predicate = _ => true,
+                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                });
             });
         }
 
