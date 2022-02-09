@@ -191,3 +191,9 @@ services:
         - elasticsearch
     ports:
         - "5601:5601" 
+  webstatus:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+

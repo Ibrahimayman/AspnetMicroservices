@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31911.196
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{50344111-AF43-44B6-AA31-1750C96C8750}"
 EndProject
@@ -45,7 +45,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{B490
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspnetRunBasics", "WebApps\AspnetRunBasics\AspnetRunBasics.csproj", "{F47B8D9A-FECD-4F6B-8153-41798A05B10C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Logging", "BuildingBlocks\Common.Logging\Common.Logging.csproj", "{183A1F3E-3A51-419B-9DAC-A0E2648595DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Logging", "BuildingBlocks\Common.Logging\Common.Logging.csproj", "{183A1F3E-3A51-419B-9DAC-A0E2648595DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStatus", "WebApps\WebStatus\WebStatus.csproj", "{48B51D93-5485-4FA9-88F4-CA8C47DB3383}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +111,10 @@ Global
 		{183A1F3E-3A51-419B-9DAC-A0E2648595DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{183A1F3E-3A51-419B-9DAC-A0E2648595DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{183A1F3E-3A51-419B-9DAC-A0E2648595DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48B51D93-5485-4FA9-88F4-CA8C47DB3383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48B51D93-5485-4FA9-88F4-CA8C47DB3383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48B51D93-5485-4FA9-88F4-CA8C47DB3383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48B51D93-5485-4FA9-88F4-CA8C47DB3383}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -131,6 +137,7 @@ Global
 		{870D2FA3-2ED6-4CEA-9E35-9BCBABC751EE} = {07F854D8-71F5-4ADD-8B92-198D8B638B7A}
 		{F47B8D9A-FECD-4F6B-8153-41798A05B10C} = {B490FD75-E661-4C6E-84AE-7941ABD6EBBB}
 		{183A1F3E-3A51-419B-9DAC-A0E2648595DE} = {E5243D3D-D5FB-48BF-8E69-DE1DF841497F}
+		{48B51D93-5485-4FA9-88F4-CA8C47DB3383} = {B490FD75-E661-4C6E-84AE-7941ABD6EBBB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4BCDBD83-9663-4C1E-90B2-C05F31609B23}
